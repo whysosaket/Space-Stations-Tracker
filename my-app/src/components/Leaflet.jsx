@@ -1,9 +1,8 @@
 import React from "react";
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import { MapContainer, TileLayer } from "react-leaflet";
 import "./Leaflet.css";
 
 const Leaflet = () => {
-  const position = [20.250041990505274, 85.80019968614499];
 
   return (
     <>
@@ -17,15 +16,16 @@ const Leaflet = () => {
               margin: "auto",
               borderRadius: "10px",
             }}
-            center={position}
-            zoom={13}
-            scrollWheelZoom={true}
+            center={[0, 0]}
+            zoom={1}
+            worldCopyJump={true}
           >
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+              url="http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}"
+              maxZoom={20}
+              subdomains={["mt0", "mt1", "mt2", "mt3"]}
             />
-            <Marker position={position}></Marker>
           </MapContainer>
         </div>
       </div>

@@ -30,7 +30,17 @@ const Home = () => {
         </article>
       </div>
 
+        {/* BUTTON FOR ISS AND TSS MAPS */}
+        <div id="selectSat">
+      <div>
+        <input className="btn btn-secondary mx-1" type="button" id="isscheckbox" name="isscheckbox" value="ISS" />
+        <label for="isscheckbox"></label>
 
+
+        <input className="btn btn-secondary" type="button" id="tsscheckbox" name="tsscheckbox" value="TSS" />
+        <label for="tsscheckbox"></label>
+      </div>
+    </div>
 
       </div>
       <Leaflet />
