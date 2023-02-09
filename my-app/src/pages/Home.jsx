@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import Leaflet from "../components/Leaflet";
+import SatelliteContext from "../context/satellite/satelliteContext";
 
 const Home = () => {
+  
+  const ContextSatellite = useContext(SatelliteContext);
+  const { fetchSatellite, getISS } = ContextSatellite;
+
+
   return (
     <div>
       <div className="body">
@@ -33,7 +39,7 @@ const Home = () => {
         {/* BUTTON FOR ISS AND TSS MAPS */}
         <div id="selectSat">
       <div>
-        <input className="btn btn-secondary mx-1" type="button" id="isscheckbox" name="isscheckbox" value="ISS" />
+        <input onClick={getISS} className="btn btn-secondary mx-1" type="button" id="isscheckbox" name="isscheckbox" value="ISS" />
         <label for="isscheckbox"></label>
 
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { MapContainer, TileLayer } from "react-leaflet";
+import { MapContainer, TileLayer, Polyline } from "react-leaflet";
 import "./Leaflet.css";
 
 const Leaflet = () => {
@@ -20,6 +20,11 @@ const Leaflet = () => {
             zoom={1}
             worldCopyJump={true}
           >
+
+            <Polyline pathOptions={{ color: "yellow" }} positions={[]} />
+
+
+
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}"
